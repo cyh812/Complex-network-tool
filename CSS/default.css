@@ -1,0 +1,414 @@
+@charset "UTF-8";
+
+/**
+ * default.css
+ * @authors Joe Jiang (hijiangtao@gmail.com)
+ * @date    2017-04-07 11:32:35
+ * @version $Id$
+ */
+
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #dcdcdc;
+}
+
+/*stylesheet for horizontal 3 column layout*/
+
+#container {
+    width: 100%;
+    height:calc(100% - 65px);
+}
+
+#main {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#chart {
+    margin: 0 300px;
+    height: 60%;
+	border: 1px solid #AAA;
+	background-color: white;
+}
+
+#chartTip{
+     position: absolute;
+     left: 320px;
+     top: 65%;
+     font-size:.2rem;
+ }
+
+#chartTip .enlargeContainer{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#chartTip .enlargeContainer svg{
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 4px;
+    transform: scale(1.4);
+    cursor: pointer;
+    fill: #262626;
+}
+
+#chartTip2 .enlargeContainer2{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#chartTip2 .enlargeContainer2 svg{
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 4px;
+    transform: scale(1.4);
+    cursor: pointer;
+    fill: #262626;
+}
+
+#chartTip .enlargeContainer svg:hover {
+  fill: #d4237a;
+}
+
+#chartTip2 .enlargeContainer2 svg:hover {
+    fill: #d4237a;
+}
+
+
+.renderSelect{
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.renderSelect select{
+    width: 120px;
+}
+
+.renderTips{
+    display: inline-block;
+}
+
+ .colorTips{
+    font-size:8px;
+    color: #000;
+    text-align: center;
+    border: 1px solid #313131;
+    background-image: linear-gradient(to right, #ff0000, #00ff00, #0000ff);
+}
+
+#chartTip2{
+    position: absolute;
+    right: 320px;
+    top: 65%;
+    font-size:.2rem;
+}
+
+#otherChart{
+    margin: 0 300px;
+    height: 40%;
+    border-left: 1px solid #AAA;
+    border-right: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+    background-color: white;
+}
+
+#otherChart #chart1{
+    float: left;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#otherChart #chart2{
+    float: right;
+    border-left: 1px solid #AAA;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+
+#panel_3, #panel {
+    float: left;
+    height: 100%;
+    width: 300px;
+}
+
+#panel{
+    margin-left: -100%;
+}
+
+#panel_3{
+    margin-left: -300px;
+}
+
+
+
+
+/* STYLESHEET FOR HEADERCOMPONENTS */
+
+#panel_2 {
+	width: 100%;
+	height: 64px;
+	border-bottom: 1px solid #AAA;
+	background-color: #363636;
+	margin: 0;
+    line-height: 64px;
+}
+
+#panel_2 header,section {
+	height: 64px;
+    color: white;
+    margin-left: 1.5rem;
+    float: left;
+}
+
+
+#panel_2 header .svgContainer{
+	margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    height: 64px;
+    display: inline-block;
+}
+#panel_2 header .svgContainer a{
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    height: 64px;
+    display: inline-block;
+    text-decoration: none;
+    user-select: none;
+}
+
+#panel_2 section ul{
+    list-style: none;
+    float: left;
+    font-size: .8rem;
+    margin-left: 3rem;
+}
+
+#panel_2 section ul>li{
+    float: left;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#panel_2 section ul>li span{
+    padding: 4px 10px;
+    border-radius: 15px;
+    transition: all 500ms linear;
+}
+
+#panel_2 section ul>li span:hover{
+    background-color: rgba(206, 206, 206, 0.6)
+}
+
+#panel_2 section ul>li:after{
+    content: '';
+    height:4px;
+    background-color: #d4237a;
+}
+
+#panel_2 header .svgContainer svg{
+	width: 1.2rem;
+	height: 1.2rem;
+    margin-right: 4px;
+    transform: scale(2);
+}
+
+
+
+/* STYLESHEET FOR COMPONENTS */
+#panel div {
+    margin: 0.5rem;
+}
+
+#panel input {
+	border: 1px solid #AAA;
+	padding: 0;
+	height: calc(1.5rem - 2px);
+	/*width: 3rem;*/
+}
+
+#panel label {
+
+	margin-right: .4rem;
+    user-select: none;
+}
+
+#panel select, button {
+	height: 1.5rem;
+    background: white;
+    cursor: pointer;
+}
+
+#panel #run {
+    width: 100%;
+    text-align: center;
+    height: 24px;
+    line-height: 24px;
+}
+
+#panel button {
+	border: 1px solid #AAA;
+	transition: .5s;
+}
+
+#panel button:hover {
+	color: white;
+	background-color: rgba(250,150,100, 1);
+	transition: .2s;
+}
+
+#panel table, th, td {
+	border: .5px solid gray;
+    user-select: none;
+}
+#panel table {
+    font-size: .8rem;
+	width: 100%;
+	border-collapse: collapse;
+    user-select: none;
+}
+#panel th, td {
+	padding: .3rem .8rem;
+    user-select: none;
+}
+
+#modalTable table, th, td {
+    border: .5px solid gray;
+    user-select: none;
+}
+#modalTable table {
+    font-size: .8rem;
+    width: 100%;
+    border-collapse: collapse;
+    user-select: none;
+}
+#modalTable th, td {
+    padding: .3rem .8rem;
+    user-select: none;
+}
+
+#modalTable table, th, td {
+    border: .5px solid gray;
+    user-select: none;
+}
+#modalTable2 {
+    margin-top:15px;
+}
+#modalTable2 table {
+    font-size: .8rem;
+    width: 100%;
+    border-collapse: collapse;
+    user-select: none;
+}
+#modalTable2 th, td {
+    padding: .3rem .8rem;
+    user-select: none;
+}
+#panel #copyright {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 1rem;
+	font-size: .8rem;
+	color: gray;
+}
+
+/* STYLESHEET FOR STYLE COMPONENTS */
+#panel_3 {
+    padding: .5rem;
+}
+
+#panel_3 #nodeStyle {
+    padding: .5rem;
+    line-height: 2rem;
+}
+
+#panel_3 #nodeStyle h3 {
+    font-weight: 600;
+}
+
+#panel_3 #nodeStyle label {
+    font-size: .8rem;
+    display: inline-block;
+    width: 45%;
+    text-align: left;
+    user-select: none;
+}
+
+#panel_3 #nodeStyle input {
+    width: 50%;
+    text-align: left;
+}
+
+#panel_3 #nodeStyle #rangeInputComponent {
+    text-align: left;
+}
+
+#panel_3 #nodeStyle #rangeInputComponent #rangeInput1 {
+    width: 25%;
+}
+
+#panel_3 #nodeStyle #rangeInputComponent #rangeInput2 {
+    width: 30%;
+}
+
+#panel_3 #nodeStyle #rangeInputComponent label {
+    user-select: none;
+    width: 38%;
+}
+
+/*STYLE FOR resize chart*/
+#resizeChart{
+    display: none;
+    position: absolute;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+}
+
+#resizeChart #chart5{
+    position: relative;
+    font-size: 0.8rem;
+    width: 95%;
+    height: 95%;
+    background-color: white;
+    margin: 15px auto 0 ;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+#resizeChart #chart5 #close_button{
+    position: absolute;
+    right: 20px;
+    top: 20px
+
+}
+
+#resizeChart #chart5 #close_button svg{
+    width: 0.8rem;
+    height: 0.8rem;
+    transform: scale(2);
+    cursor: pointer;
+    fill: #262626;
+}
+
+#resizeChart #chart5 #close_button svg:hover{
+    fill: #d4237a;
+}
