@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Force Directed Layout Demo</title>
+</head>
+
+<body>
+<div id = "panel_2">
+    <header >
+            <div class = 'svgContainer '>
+                <a href="">
+                    <svg>
+                            <use xlink:href="images/myIcons.svg#title"></use>
+                    </svg>
+                    Force Directed Layout
+                </a>
+            </div>
+    </header>
+    <section>
+        <ul id="panel2">
+            <li ><span class="tabButton2">import data</span></li>
+            <!--<li><span class="tabButton2">节点样式控制</span></li>-->
+            <!--<li><span class="tabButton2">边样式处理</span></li>-->
+            <!--<li><span class="tabButton2">边聚合处理</span></li>-->
+            <!--<li><span class="tabButton2">社团分析</span></li>-->
+            <!--<li><span class="tabButton2">交互操作</span></li>-->
+            <!--<li><span class="tabButton2">导出图片</span></li>-->
+        </ul>
+    </section>
+
+    <div class="modal">
+        <div class="modalContent">
+            <div class="header">
+                Select Data
+            </div>
+            <div class="content">
+                <label for="dataSelect">Select Data</label>
+                <select id="dataSelect">
+                    <option value="data">data</option>
+                    <option value="testData2Little">testData2Little</option>
+                    <option value="bigData">bigData</option>
+                    <option value="footBallData">footBallData</option>
+                    <option value="footBallData2">footBallData2</option>
+                    <option value="dolphin">dolphin</option>
+                    <option value="customer">customer</option>
+                    <option value="structure1">structure1</option>
+                    <option value="structure2">structure2</option>
+                    <option value="structure3">structure3</option>
+                    <option value="politic">politic</option>
+                    <option value="graph">graph</option>
+                    <option value="StarWars">StarWars</option>
+                    <option value="acdamic">acdamicstyle</option>
+                    <option value="beicanshijie">beicanshijie</option>
+                    <option value="power">power</option>
+                </select>
+            </div>
+            <div class="end">
+                <button id="dataCancel">Cancel</button>
+                <button id="dataSure">Sure</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id = "container">
+    <div id = "main" >
+        <div id="chart"></div>
+        <div id="otherChart">
+            <div id="chart1"></div>
+            <div id="chart2"></div>
+        </div>
+        <div  id="chartTip">
+            <div class="renderTips">
+                <div class="colorTips">HOT SPOT RANGE</div>
+                <p style="float:left">
+                    <span >0 ------------------></span>
+                    <span >1</span>
+                </p>
+            </div>
+            <div class="enlargeContainer">
+                <svg id="enlarge_button">
+                    <use xlink:href="images/myIcons.svg#enlarge"></use>
+                </svg>
+            </div>
+            <div class="renderSelect">
+                <label for="renderItem">Assess Item</label>
+                <select id="renderItem">
+                    <option value="nodeCross">nodeCross</option>
+                    <option value="nodeOverlap">nodeOverlap</option>
+                    <option value="nodeAngel">nodeAngel</option>
+                    <option value="nodeBeyondEdge">nodeBeyondEdge</option>
+                    <option value="nodeAbnormalEdge">nodeAbnormalEdge</option>
+                    <option value="nodeDegreeNumber">nodeDegreeNumber</option>
+                    <option value="nodeRegionalInterference">nodeRegionalInterference</option>
+                    <option value="nodeLinkLength">nodeLinkLength</option>
+                </select>
+            </div>
+        </div>
+
+        <div  id="chartTip2">
+            <div class="renderTips">
+                <div class="colorTips">HOT SPOT RANGE</div>
+                <p style="float:left">
+                    <span >0 ------------------></span>
+                    <span >1</span>
+                </p>
+            </div>
+            <div class="enlargeContainer2">
+                <svg id="enlarge_button2">
+                    <use xlink:href="images/myIcons.svg#enlarge"></use>
+                </svg>
+            </div>
+            <div class="renderSelect">
+                <label for="renderItem2">Assess Item</label>
+                <select id="renderItem2">
+                    <option value="edgeCross">edgeCross</option>
+                    <option value="edgeAngel">edgeAngel</option>
+                    <option value="edgeUnderNode">edgeUnderNode</option>
+                    <option value="edgeLinkLength">edgeLinkLength</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="panel">
+        <ul  class = 'tabBar' id = 'tabBar'>
+            <li id = "para_button" class = 'tabButton current'>Parameter </li>
+            <li id = "assessment_button" class = 'tabButton'>Evaluation</li>
+        </ul>
+        <div id = 'parameter_panel' class = 'button_panel show'>
+            <h3>Parameters</h3>
+            <div>
+                <label>Repulsion</label>
+                <input type="number" name="repulsion" value="200.0" id="repuval">
+            </div>
+            <div>
+                <label>Stiffness</label>
+                <input type="number" name="stiffness" value="200.0" id="stifval">
+            </div>
+            <div>
+                <label>Damping</label>
+                <input type="text" name="damping" value="0.65" id="dampval">
+                <br>
+            </div>
+            <div>
+                <label>defSpringLen</label>
+                <input type="text" name="defSpringLen" value="50" id="defSpringLen">
+                <br>
+            </div>
+            <div>
+                <label>Temperature</label>
+                <input type="text" name="initialTemperature" value="100" id="initialTemperature">
+                <br>
+            </div>
+            <div>
+                <label>Iteration</label>
+                <input type="text" name="initailIteration" value="200" id="initailIteration">
+                <br>
+            </div>
+            <div>
+                <label>Drawing Approach</label>
+                <select id="approachSel">
+                    <option value="canvas">Canvas</option>
+                    <option value="svg">SVG</option>
+                </select>
+            </div>
+            <div>
+                <label>Drawing algorithms</label>
+                <select id="algorithms">
+                    <option value="Spring">Spring</option>
+                    <option value="forceAR">forceAR</option>
+                    <option value="FR">FR</option>
+                    <option value="FR_">FR_</option>
+                    <option value="Spring_">Spring_</option>
+                    <option value="randomAnnealing">randomAnnealing</option>
+                    <option value="test1">test1</option>
+                    <option value="FRlog">FRlog</option>
+                    <option value="Linlog">Linlog</option>
+                    <option value="FR2">FR2</option>
+                    <option value="gephi">gephi</option>
+                </select>
+            </div>
+            <div>
+                <button id="run">Start</button>
+            </div>
+            <hr>
+            <h3>Details</h3>
+            <div>
+                <table id="detailTable">
+                    <tr>
+                        <th>Item Desp.</th>
+                        <th>Consuming</th>
+                    </tr>
+                    <tr>
+                        <td>Drawing Approach</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Render Time</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Iteration Time</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Current Energy</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Node Number</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Edge Number</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Used JSHeapSize</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Layout ChildNodes</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id = 'assessment_panel' class = 'button_panel'>
+            <h3>readability(global)</h3>
+            <div>
+                <table id="assessTable_read">
+                    <tr>
+                        <th>node index</th>
+                        <th>numerical value([0,1])</th>
+                    </tr>
+                    <tr>
+                        <td>node overlap</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>node angel</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>node cross</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>nodeBeyondEege*</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>abnormal edge</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>nodeDegreeNumber</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>nodeInterference</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>nodeLinkLength</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table id="assessTable_read_edge">
+                    <tr>
+                        <th>edge index</th>
+                        <th>numerical value([0,1])</th>
+                    </tr>
+                    <tr>
+                        <td>edge angel</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>edge cross*</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>edgeUnderNode</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>edgeLength</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="copyright">
+            <!--More detail at <a href="#">Github</a>.<br>-->
+            Created by <a href="#">luo</a> © 2019<br>
+            Modified Force Directed Layout.
+        </div>
+    </div>
+    <div id = "panel_3">
+        <h3>Modal Evaluation</h3>
+        <div id = "nodeStyle">
+            <div id="rangeInputComponent">
+                <label>nodeRadius(px)</label>
+                <input type="range" id="rangeInput1">
+                <input type="text" name="rangeInput"id="rangeInput2">
+            </div>
+        </div>
+        <div id="modalTable">
+            <table >
+                <tr>
+                    <th>Node Connectivity Cognition</th>
+                    <th>modal value</th>
+                </tr>
+                <tr>
+                    <td>reaction time</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>accuracy</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+        <div id="modalTable2">
+            <table >
+                <tr>
+                    <th> Shortest Path Cognition</th>
+                    <th>modal value</th>
+                </tr>
+                <tr>
+                    <td>reaction time</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>accuracy</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id = "resizeChart">
+    <div id = "chart5">
+        <div id="close_button">
+            <svg>
+                <use xlink:href="images/myIcons.svg#close"></use>
+            </svg>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
