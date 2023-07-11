@@ -1,3 +1,3 @@
 # complex-network-Vis
-**run**
-open a terminal and `npm start`
+**run**/
+Once the project has been cloned locally, please unzip the node_moudles tarball and input `npm start` in the terminal
