@@ -1,0 +1,115 @@
+
+/*stylesheet for tab buttons*/
+
+.tabBar {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tabBar li{
+    float: left;
+    width: 80px;
+    height: 32px;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 32px;
+    cursor: pointer;
+    background-color: #c6c6c6;
+    transition: all 200ms linear;
+}
+
+.tabBar li:hover{
+    color: #000000;
+    background-color: white;
+}
+
+/*clicked colors*/
+
+.current {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+/*style for button panel*/
+
+#parameter_panel label {
+    font-size: .8rem;
+    display: inline-block;
+    width: 45%;
+    text-align: left;
+}
+
+#parameter_panel input,select {
+    width: 50%;
+    text-align: left;
+}
+
+
+.button_panel {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+
+/*stylesheet for header tab*/
+
+.current2 {
+    background-color: rgba(206, 206, 206, 0.6)
+}
+
+.modal{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+
+.modal .modalContent{
+    font-size: 0.8rem;
+    width: 500px;
+    background-color: white;
+    margin: 100px auto 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.modal .modalContent .content{
+    padding: 1rem;
+}
+
+.modal .modalContent .content select{
+    width: 60%;
+}
+
+.modal .modalContent .header{
+    padding-left: 1rem;
+    line-height: 40px;
+    color: white;
+    background-color: #2a2a2a;
+}
+
+.modal .modalContent .end{
+    background-color: white;
+    overflow: hidden;
+    padding: 1rem;
+}
+.modal .modalContent .end button{
+    float: right;
+    margin-right: 1rem;
+    height: 1.5rem;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #AAA;
+    padding: 0.2rem;
+}
+
+.modal .modalContent .end button:hover{
+    background-color: #d4237a;
+    color: white;
+}
+
+
+
