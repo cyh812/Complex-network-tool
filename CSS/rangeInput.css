@@ -1,0 +1,29 @@
+#panel_3 #nodeStyle input[type=range] {
+    -webkit-appearance: none;
+    height: 2px;
+    margin-top: -8px;
+    background: linear-gradient(to right, #d4237a 25%, #565656 25% ) no-repeat;
+    position: relative;
+    top: -4px;
+}
+
+#panel_3 #nodeStyle input[type=range]:focus {
+    outline: none;
+}
+
+#panel_3 #nodeStyle input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 2px;
+    margin-top: -1px;
+    background-color: #565656;
+    padding: 1px;
+}
+
+#panel_3 #nodeStyle input[type=range]::-webkit-slider-runnable-track {
+
+}
+
+#panel_3 #nodeStyle input[type=range]::-webkit-slider-thumb:hover {
+    background-color: #d4237a;
+}
